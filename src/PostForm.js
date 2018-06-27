@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class PostForm extends Component {
     //executes when the form is submitted take in the event as argument
@@ -16,6 +17,13 @@ class PostForm extends Component {
             message
         }
         console.log(data);
+
+        this.props.dispatch({
+            type: 'ADD_POST',data
+        });
+
+        this.getTitle.value = '';
+        this.getMesssage.value = '';
     }
 
     render() {
@@ -33,4 +41,4 @@ class PostForm extends Component {
 }
 
 //connect method allows us to access out store state propeties and methods
-export default PostForm;
+export default connect() (PostForm);

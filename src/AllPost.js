@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class AllPost extends Component {
     render() {
@@ -11,4 +12,10 @@ class AllPost extends Component {
     }
 }
 
-export default AllPost;
+const mapStateToProps = (state) => {
+    return {
+        posts: state
+    }
+}
+
+export default connect(mapStateToProps)(AllPost);
