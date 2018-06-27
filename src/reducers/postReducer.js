@@ -5,6 +5,8 @@ const postReducer = (state = [], action) => {
         //action data is an object with out post title and post message
         case 'ADD_POST':
             return state.concat([action.data]);
+        case 'DELETE_POST':
+            return state.filter((post)=>post.id !== action.id);
         //default value incase none of the action.type value matches any of the cases we simpley return the state.
         default:
             return state;
