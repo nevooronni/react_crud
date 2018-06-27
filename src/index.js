@@ -6,7 +6,7 @@ import App from './App';
 //import our store and reducer 
 import { createStore } from 'redux';
 //provider component from react-redux library
-
+import { Provider } from 'react-redux';
 
 import postReducer from './reducers/postReducer';
 
@@ -17,4 +17,6 @@ const store = createStore(postReducer);
 
 ReactDOM.render(
     //provide the store for our application to use
-    <App />, document.getElementById('root'));
+    <Provider store={store}>
+        <App/>
+    </Provider>, document.getElementById('root'));
