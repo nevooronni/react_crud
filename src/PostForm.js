@@ -32,4 +32,5 @@ class PostForm extends Component {
     }
 }
 
+//connect method allows us to access out store state propeties and methods
 export default PostForm;

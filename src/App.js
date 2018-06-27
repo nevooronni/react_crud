@@ -10,6 +10,6 @@ class App extends Component {
           <AllPost />
         </div>
       );
-  }
+    }
   }
 export default App;
