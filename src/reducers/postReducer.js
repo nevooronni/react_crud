@@ -10,6 +10,14 @@ const postReducer = (state = [], action) => {
         //loop over each item and then check the id of the post if match the return a new object but change the value of the editing to true if false return object as it was
         case 'EDIT_POST':
             return state.map((post)=>post.id === action.id ? {...post,editing:!post.editing}:post)
+        case 'UPDATE': 
+            return state.map((post)=>{
+                if(post.id === action.id) {
+                    return {
+                        ...post,title: action.data.newTitle,message: action.data.newMessage,editing: !post.editing
+                    }
+                } else return post;
+            })
         //default value incase none of the action.type value matches any of the cases we simpley return the state.
         default:
             return state;
